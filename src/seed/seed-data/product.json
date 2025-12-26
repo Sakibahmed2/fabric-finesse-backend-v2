@@ -1,0 +1,205 @@
+[
+  {
+    "name": "Classic Cotton T-Shirt",
+    "slug": "classic-cotton-tshirt",
+    "category": "T-Shirts",
+    "price": 29.99,
+    "discountPrice": 19.99,
+    "description": "A comfortable and stylish cotton t-shirt, perfect for everyday wear.",
+    "images": [
+      "https://example.com/images/tshirt-front.jpg",
+      "https://example.com/images/tshirt-back.jpg"
+    ],
+    "stock": 120
+  },
+  {
+    "name": "Slim Fit Jeans",
+    "slug": "slim-fit-jeans",
+    "category": "Jeans",
+    "price": 49.99,
+    "discountPrice": 39.99,
+    "description": "Trendy slim fit jeans for a modern look.",
+    "images": ["https://example.com/images/jeans-front.jpg"],
+    "stock": 80
+  },
+  {
+    "name": "Leather Jacket",
+    "slug": "leather-jacket",
+    "category": "Jackets",
+    "price": 99.99,
+    "discountPrice": 79.99,
+    "description": "Premium leather jacket for all seasons.",
+    "images": ["https://example.com/images/jacket.jpg"],
+    "stock": 30
+  },
+  {
+    "name": "Running Shoes",
+    "slug": "running-shoes",
+    "category": "Shoes",
+    "price": 59.99,
+    "discountPrice": 49.99,
+    "description": "Lightweight running shoes for daily exercise.",
+    "images": ["https://example.com/images/shoes.jpg"],
+    "stock": 100
+  },
+  {
+    "name": "Wool Sweater",
+    "slug": "wool-sweater",
+    "category": "Sweaters",
+    "price": 39.99,
+    "discountPrice": 29.99,
+    "description": "Warm wool sweater for winter.",
+    "images": ["https://example.com/images/sweater.jpg"],
+    "stock": 60
+  },
+  {
+    "name": "Summer Shorts",
+    "slug": "summer-shorts",
+    "category": "Shorts",
+    "price": 24.99,
+    "discountPrice": 19.99,
+    "description": "Comfortable shorts for summer days.",
+    "images": ["https://example.com/images/shorts.jpg"],
+    "stock": 90
+  },
+  {
+    "name": "Elegant Dress",
+    "slug": "elegant-dress",
+    "category": "Dresses",
+    "price": 79.99,
+    "discountPrice": 59.99,
+    "description": "Elegant dress for special occasions.",
+    "images": ["https://example.com/images/dress.jpg"],
+    "stock": 40
+  },
+  {
+    "name": "Baseball Cap",
+    "slug": "baseball-cap",
+    "category": "Hats",
+    "price": 14.99,
+    "discountPrice": 9.99,
+    "description": "Classic baseball cap for sunny days.",
+    "images": ["https://example.com/images/cap.jpg"],
+    "stock": 150
+  },
+  {
+    "name": "Ankle Socks",
+    "slug": "ankle-socks",
+    "category": "Socks",
+    "price": 9.99,
+    "discountPrice": 6.99,
+    "description": "Soft and comfortable ankle socks.",
+    "images": ["https://example.com/images/socks.jpg"],
+    "stock": 200
+  },
+  {
+    "name": "Leather Belt",
+    "slug": "leather-belt",
+    "category": "Accessories",
+    "price": 19.99,
+    "discountPrice": 14.99,
+    "description": "Durable leather belt for all outfits.",
+    "images": ["https://example.com/images/belt.jpg"],
+    "stock": 70
+  },
+  {
+    "name": "Graphic Tee",
+    "slug": "graphic-tee",
+    "category": "T-Shirts",
+    "price": 22.99,
+    "discountPrice": 17.99,
+    "description": "Trendy graphic t-shirt for casual wear.",
+    "images": ["https://example.com/images/graphic-tee.jpg"],
+    "stock": 110
+  },
+  {
+    "name": "Denim Shorts",
+    "slug": "denim-shorts",
+    "category": "Shorts",
+    "price": 27.99,
+    "discountPrice": 21.99,
+    "description": "Classic denim shorts for summer.",
+    "images": ["https://example.com/images/denim-shorts.jpg"],
+    "stock": 85
+  },
+  {
+    "name": "Winter Beanie",
+    "slug": "winter-beanie",
+    "category": "Hats",
+    "price": 12.99,
+    "discountPrice": 8.99,
+    "description": "Warm beanie for cold weather.",
+    "images": ["https://example.com/images/beanie.jpg"],
+    "stock": 130
+  },
+  {
+    "name": "Canvas Sneakers",
+    "slug": "canvas-sneakers",
+    "category": "Shoes",
+    "price": 34.99,
+    "discountPrice": 27.99,
+    "description": "Casual canvas sneakers for daily use.",
+    "images": ["https://example.com/images/sneakers.jpg"],
+    "stock": 95
+  },
+  {
+    "name": "Wool Socks",
+    "slug": "wool-socks",
+    "category": "Socks",
+    "price": 11.99,
+    "discountPrice": 7.99,
+    "description": "Cozy wool socks for winter.",
+    "images": ["https://example.com/images/wool-socks.jpg"],
+    "stock": 180
+  },
+  {
+    "name": "Fashion Scarf",
+    "slug": "fashion-scarf",
+    "category": "Accessories",
+    "price": 16.99,
+    "discountPrice": 12.99,
+    "description": "Stylish scarf for all seasons.",
+    "images": ["https://example.com/images/scarf.jpg"],
+    "stock": 75
+  },
+  {
+    "name": "Pullover Hoodie",
+    "slug": "pullover-hoodie",
+    "category": "Sweaters",
+    "price": 44.99,
+    "discountPrice": 34.99,
+    "description": "Comfortable pullover hoodie for casual wear.",
+    "images": ["https://example.com/images/hoodie.jpg"],
+    "stock": 65
+  },
+  {
+    "name": "Summer Dress",
+    "slug": "summer-dress",
+    "category": "Dresses",
+    "price": 69.99,
+    "discountPrice": 54.99,
+    "description": "Light and breezy dress for summer.",
+    "images": ["https://example.com/images/summer-dress.jpg"],
+    "stock": 55
+  },
+  {
+    "name": "Denim Jacket",
+    "slug": "denim-jacket",
+    "category": "Jackets",
+    "price": 89.99,
+    "discountPrice": 69.99,
+    "description": "Classic denim jacket for all outfits.",
+    "images": ["https://example.com/images/denim-jacket.jpg"],
+    "stock": 35
+  },
+  {
+    "name": "Sports Watch",
+    "slug": "sports-watch",
+    "category": "Accessories",
+    "price": 59.99,
+    "discountPrice": 44.99,
+    "description": "Durable sports watch for active lifestyles.",
+    "images": ["https://example.com/images/watch.jpg"],
+    "stock": 50
+  }
+]

@@ -1,11 +1,19 @@
+import { buildQuery } from "../../builder/queryBuilder";
+import { Categories } from "../categories/categories.model";
 import { Products } from "./products.model";
-import { TProductQuery, TProducts } from "./products.type";
+import { TProducts } from "./products.type";
 
 const createProducts = async (payload: TProducts) => {
   // check if slug exists
   const isSlugExists = await Products.findOne({ slug: payload.slug });
   if (isSlugExists) {
     throw new Error("Product with this slug already exists");
+  }
+
+  // check if category exists
+  const isCategoryExists = await Categories.findById(payload.category);
+  if (!isCategoryExists) {
+    throw new Error("Category not found");
   }
 
   const slug = payload.slug.toLowerCase().replace(/ /g, "-");
@@ -15,29 +23,20 @@ const createProducts = async (payload: TProducts) => {
   return result;
 };
 
-const getAllProducts = async (query: TProductQuery) => {
-  const filter: Record<string, any> = {};
-
-  if (query.category) {
-    filter.category = query.category;
-  }
-  if (query.minPrice && query.maxPrice) {
-    filter.price = {
-      $gte: Number(query.minPrice),
-      $lte: Number(query.maxPrice),
-    };
-  }
-  if (query.search) {
-    filter.name = { $regex: query.search, $options: "i" };
-    filter.description = { $regex: query.search, $options: "i" };
-    filter.$or = [{ slug: filter.slug }];
-  }
-
-  const skip =
-    query.page && query.limit
-      ? (Number(query.page) - 1) * Number(query.limit)
-      : 0;
-  const limit = query.limit ? Number(query.limit) : 10;
+const getAllProducts = async (query: any) => {
+  const { filter, page, limit, skip } = buildQuery({
+    search: query.search,
+    searchFields: ["name", "description", "slug"],
+    page: query.page,
+    limit: query.limit,
+    minPrice: query.minPrice,
+    maxPrice: query.maxPrice,
+    sortBy: query.sortBy,
+    sortOrder: query.sortOrder,
+    filters: {
+      ...(query.category && { category: query.category }),
+    },
+  });
 
   const products = await Products.aggregate([
     { $match: filter },
@@ -47,22 +46,29 @@ const getAllProducts = async (query: TProductQuery) => {
         localField: "category",
         foreignField: "_id",
         as: "category",
+        pipeline: [{ $project: { name: 1 } }],
       },
     },
     { $unwind: "$category" },
+    {
+      $sort:
+        query.sort && Object.keys(query.sort).length
+          ? query.sort
+          : { createdAt: -1 },
+    },
     { $skip: skip },
     { $limit: limit },
   ]);
 
-  const pagination = {
-    page: query.page ? Number(query.page) : 1,
-    limit: limit,
-    total: await Products.countDocuments(filter),
-  };
+  const total = await Products.countDocuments(filter);
 
   return {
-    products,
-    pagination,
+    result: products,
+    pagination: {
+      total,
+      page,
+      limit,
+    },
   };
 };
 
