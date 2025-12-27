@@ -3,6 +3,7 @@ import { userRouter } from "./modules/users/users.routes";
 import { productsRouter } from "./modules/products/products.routes";
 import sendResponse from "./utils/sendResponse";
 import { categoriesRouter } from "./modules/categories/categories.routes";
+import { orderRouter } from "./modules/orders/order.routes";
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/products", productsRouter);
 app.use("/api/v1/categories", categoriesRouter);
+app.use("/api/v1/orders", orderRouter);
 
 // Not Found Middleware
 app.use((req, res, next) => {

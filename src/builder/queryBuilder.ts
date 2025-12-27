@@ -1,4 +1,4 @@
-type QueryParams = {
+export type TQueryParams = {
   search?: string;
   searchFields?: string[];
   page?: number;
@@ -10,7 +10,7 @@ type QueryParams = {
   sortOrder?: "asc" | "desc";
 };
 
-export const buildQuery = (query: QueryParams) => {
+export const buildQuery = (query: TQueryParams) => {
   const filter: Record<string, any> = {};
 
   // Basic filters (category, status, userId, etc.)
@@ -34,8 +34,9 @@ export const buildQuery = (query: QueryParams) => {
   }
 
   // Sorting
-  const sort: Record<string, 1 | -1> = {};
+  let sort: Record<string, 1 | -1> | undefined = undefined;
   if (query.sortBy) {
+    sort = {};
     sort[query.sortBy] = query.sortOrder === "desc" ? -1 : 1;
   }
 
