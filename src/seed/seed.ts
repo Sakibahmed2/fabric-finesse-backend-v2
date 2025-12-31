@@ -27,11 +27,19 @@ const seed = async () => {
 
     // Seed products
     const productsData = loadJson("product.json");
-    // Replace category name with ObjectId
-    const productsWithCategoryIds = productsData.map((product: any) => ({
-      ...product,
-      category: categoryMap[product.category],
-    }));
+    // Replace category name with ObjectId and validate
+    const productsWithCategoryIds = productsData.map((product: any) => {
+      const categoryId = categoryMap[product.category];
+      if (!categoryId) {
+        throw new Error(
+          `Category not found for product: ${product.name} (category: ${product.category})`
+        );
+      }
+      return {
+        ...product,
+        category: categoryId,
+      };
+    });
     await Products.insertMany(productsWithCategoryIds);
     console.log("Seeded products");
 

@@ -12,7 +12,14 @@ export type TOrderStatus = (typeof ORDER_STATUSES)[number];
 export type TOrder = {
   order_id: string;
   user_id: Types.ObjectId;
-  products: Types.ObjectId[];
+  items: [
+    {
+      product_id: Types.ObjectId;
+      color: string;
+      size: string;
+      quantity: number;
+    }
+  ];
   subtotal: number;
   delivery_fee: number;
   total: number;

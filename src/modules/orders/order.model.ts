@@ -13,11 +13,25 @@ const orderSchema = new Schema<TOrder>(
       ref: "User",
       required: true,
     },
-    products: [
+    items: [
       {
-        type: Schema.Types.ObjectId,
-        ref: "Products",
-        required: true,
+        product_id: {
+          type: Schema.Types.ObjectId,
+          ref: "Products",
+          required: true,
+        },
+        color: {
+          type: String,
+          required: true,
+        },
+        size: {
+          type: String,
+          required: true,
+        },
+        quantity: {
+          type: Number,
+          required: true,
+        },
       },
     ],
     subtotal: {

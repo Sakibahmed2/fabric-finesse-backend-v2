@@ -7,10 +7,13 @@
     "discountPrice": 19.99,
     "description": "A comfortable and stylish cotton t-shirt, perfect for everyday wear.",
     "images": [
-      "https://example.com/images/tshirt-front.jpg",
-      "https://example.com/images/tshirt-back.jpg"
+      "https://fabrilife.com/products/65e086171f36c-square.jpg?v=20",
+      "https://fabrilife.com/products/654c7c8e3f5f4-square.jpeg?v=20",
+      "https://fabrilife.com/products/640031abaefc9-square.jpg?v=20"
     ],
-    "stock": 120
+    "stock": 120,
+    "colors": ["White", "Black", "Blue"],
+    "sizes": ["S", "M", "L", "XL"]
   },
   {
     "name": "Slim Fit Jeans",
@@ -19,8 +22,14 @@
     "price": 49.99,
     "discountPrice": 39.99,
     "description": "Trendy slim fit jeans for a modern look.",
-    "images": ["https://example.com/images/jeans-front.jpg"],
-    "stock": 80
+    "images": [
+      "https://fabrilife.com/products/654c7c8e3f5f4-square.jpeg?v=20",
+      "https://fabrilife.com/products/640031abaefc9-square.jpg?v=20",
+      "https://fabrilife.com/products/65e1a224b97ef-square.jpg?v=20"
+    ],
+    "stock": 80,
+    "colors": ["Blue", "Black", "Grey"],
+    "sizes": ["28", "30", "32", "34", "36"]
   },
   {
     "name": "Leather Jacket",
@@ -29,8 +38,14 @@
     "price": 99.99,
     "discountPrice": 79.99,
     "description": "Premium leather jacket for all seasons.",
-    "images": ["https://example.com/images/jacket.jpg"],
-    "stock": 30
+    "images": [
+      "https://fabrilife.com/products/640031abaefc9-square.jpg?v=20",
+      "https://fabrilife.com/products/65e1a224b97ef-square.jpg?v=20",
+      "https://fabrilife.com/products/61507e0222df7-square.jpg?v=20"
+    ],
+    "stock": 30,
+    "colors": ["Black", "Brown"],
+    "sizes": ["M", "L", "XL"]
   },
   {
     "name": "Running Shoes",
@@ -39,8 +54,14 @@
     "price": 59.99,
     "discountPrice": 49.99,
     "description": "Lightweight running shoes for daily exercise.",
-    "images": ["https://example.com/images/shoes.jpg"],
-    "stock": 100
+    "images": [
+      "https://fabrilife.com/products/65e1a224b97ef-square.jpg?v=20",
+      "https://fabrilife.com/products/61507e0222df7-square.jpg?v=20",
+      "https://fabrilife.com/products/65e086171f36c-square.jpg?v=20"
+    ],
+    "stock": 100,
+    "colors": ["Black", "White", "Red"],
+    "sizes": ["7", "8", "9", "10", "11"]
   },
   {
     "name": "Wool Sweater",
@@ -49,8 +70,14 @@
     "price": 39.99,
     "discountPrice": 29.99,
     "description": "Warm wool sweater for winter.",
-    "images": ["https://example.com/images/sweater.jpg"],
-    "stock": 60
+    "images": [
+      "https://fabrilife.com/products/61507e0222df7-square.jpg?v=20",
+      "https://fabrilife.com/products/65e086171f36c-square.jpg?v=20",
+      "https://fabrilife.com/products/654c7c8e3f5f4-square.jpeg?v=20"
+    ],
+    "stock": 60,
+    "colors": ["Grey", "Navy", "Beige"],
+    "sizes": ["S", "M", "L", "XL"]
   },
   {
     "name": "Summer Shorts",
@@ -59,8 +86,13 @@
     "price": 24.99,
     "discountPrice": 19.99,
     "description": "Comfortable shorts for summer days.",
-    "images": ["https://example.com/images/shorts.jpg"],
-    "stock": 90
+    "images": [
+      "https://fabrilife.com/products/65e086171f36c-square.jpg?v=20",
+      "https://fabrilife.com/products/654c7c8e3f5f4-square.jpeg?v=20"
+    ],
+    "stock": 90,
+    "colors": ["Khaki", "Navy", "Black"],
+    "sizes": ["S", "M", "L", "XL"]
   },
   {
     "name": "Elegant Dress",
@@ -69,8 +101,13 @@
     "price": 79.99,
     "discountPrice": 59.99,
     "description": "Elegant dress for special occasions.",
-    "images": ["https://example.com/images/dress.jpg"],
-    "stock": 40
+    "images": [
+      "https://fabrilife.com/products/640031abaefc9-square.jpg?v=20",
+      "https://fabrilife.com/products/65e1a224b97ef-square.jpg?v=20"
+    ],
+    "stock": 40,
+    "colors": ["Red", "Blue", "Black"],
+    "sizes": ["S", "M", "L"]
   },
   {
     "name": "Baseball Cap",
@@ -79,8 +116,13 @@
     "price": 14.99,
     "discountPrice": 9.99,
     "description": "Classic baseball cap for sunny days.",
-    "images": ["https://example.com/images/cap.jpg"],
-    "stock": 150
+    "images": [
+      "https://fabrilife.com/products/61507e0222df7-square.jpg?v=20",
+      "https://fabrilife.com/products/65e086171f36c-square.jpg?v=20"
+    ],
+    "stock": 150,
+    "colors": ["Black", "White", "Navy"],
+    "sizes": ["One Size"]
   },
   {
     "name": "Ankle Socks",
@@ -89,8 +131,13 @@
     "price": 9.99,
     "discountPrice": 6.99,
     "description": "Soft and comfortable ankle socks.",
-    "images": ["https://example.com/images/socks.jpg"],
-    "stock": 200
+    "images": [
+      "https://fabrilife.com/products/654c7c8e3f5f4-square.jpeg?v=20",
+      "https://fabrilife.com/products/640031abaefc9-square.jpg?v=20"
+    ],
+    "stock": 200,
+    "colors": ["White", "Black", "Grey"],
+    "sizes": ["S", "M", "L"]
   },
   {
     "name": "Leather Belt",
@@ -99,8 +146,13 @@
     "price": 19.99,
     "discountPrice": 14.99,
     "description": "Durable leather belt for all outfits.",
-    "images": ["https://example.com/images/belt.jpg"],
-    "stock": 70
+    "images": [
+      "https://fabrilife.com/products/65e1a224b97ef-square.jpg?v=20",
+      "https://fabrilife.com/products/61507e0222df7-square.jpg?v=20"
+    ],
+    "stock": 70,
+    "colors": ["Brown", "Black"],
+    "sizes": ["M", "L", "XL"]
   },
   {
     "name": "Graphic Tee",
@@ -109,8 +161,13 @@
     "price": 22.99,
     "discountPrice": 17.99,
     "description": "Trendy graphic t-shirt for casual wear.",
-    "images": ["https://example.com/images/graphic-tee.jpg"],
-    "stock": 110
+    "images": [
+      "https://fabrilife.com/products/65e086171f36c-square.jpg?v=20",
+      "https://fabrilife.com/products/654c7c8e3f5f4-square.jpeg?v=20"
+    ],
+    "stock": 110,
+    "colors": ["White", "Black", "Yellow"],
+    "sizes": ["S", "M", "L", "XL"]
   },
   {
     "name": "Denim Shorts",
@@ -119,8 +176,13 @@
     "price": 27.99,
     "discountPrice": 21.99,
     "description": "Classic denim shorts for summer.",
-    "images": ["https://example.com/images/denim-shorts.jpg"],
-    "stock": 85
+    "images": [
+      "https://fabrilife.com/products/640031abaefc9-square.jpg?v=20",
+      "https://fabrilife.com/products/65e1a224b97ef-square.jpg?v=20"
+    ],
+    "stock": 85,
+    "colors": ["Blue", "Black"],
+    "sizes": ["S", "M", "L"]
   },
   {
     "name": "Winter Beanie",
@@ -129,8 +191,13 @@
     "price": 12.99,
     "discountPrice": 8.99,
     "description": "Warm beanie for cold weather.",
-    "images": ["https://example.com/images/beanie.jpg"],
-    "stock": 130
+    "images": [
+      "https://fabrilife.com/products/61507e0222df7-square.jpg?v=20",
+      "https://fabrilife.com/products/65e086171f36c-square.jpg?v=20"
+    ],
+    "stock": 130,
+    "colors": ["Grey", "Black", "Navy"],
+    "sizes": ["One Size"]
   },
   {
     "name": "Canvas Sneakers",
@@ -139,8 +206,13 @@
     "price": 34.99,
     "discountPrice": 27.99,
     "description": "Casual canvas sneakers for daily use.",
-    "images": ["https://example.com/images/sneakers.jpg"],
-    "stock": 95
+    "images": [
+      "https://fabrilife.com/products/654c7c8e3f5f4-square.jpeg?v=20",
+      "https://fabrilife.com/products/640031abaefc9-square.jpg?v=20"
+    ],
+    "stock": 95,
+    "colors": ["White", "Black", "Red"],
+    "sizes": ["7", "8", "9", "10", "11"]
   },
   {
     "name": "Wool Socks",
@@ -149,8 +221,13 @@
     "price": 11.99,
     "discountPrice": 7.99,
     "description": "Cozy wool socks for winter.",
-    "images": ["https://example.com/images/wool-socks.jpg"],
-    "stock": 180
+    "images": [
+      "https://fabrilife.com/products/65e1a224b97ef-square.jpg?v=20",
+      "https://fabrilife.com/products/61507e0222df7-square.jpg?v=20"
+    ],
+    "stock": 180,
+    "colors": ["Grey", "White"],
+    "sizes": ["S", "M", "L"]
   },
   {
     "name": "Fashion Scarf",
@@ -159,8 +236,13 @@
     "price": 16.99,
     "discountPrice": 12.99,
     "description": "Stylish scarf for all seasons.",
-    "images": ["https://example.com/images/scarf.jpg"],
-    "stock": 75
+    "images": [
+      "https://fabrilife.com/products/65e086171f36c-square.jpg?v=20",
+      "https://fabrilife.com/products/654c7c8e3f5f4-square.jpeg?v=20"
+    ],
+    "stock": 75,
+    "colors": ["Red", "Blue", "Black"],
+    "sizes": ["One Size"]
   },
   {
     "name": "Pullover Hoodie",
@@ -169,8 +251,13 @@
     "price": 44.99,
     "discountPrice": 34.99,
     "description": "Comfortable pullover hoodie for casual wear.",
-    "images": ["https://example.com/images/hoodie.jpg"],
-    "stock": 65
+    "images": [
+      "https://fabrilife.com/products/640031abaefc9-square.jpg?v=20",
+      "https://fabrilife.com/products/65e1a224b97ef-square.jpg?v=20"
+    ],
+    "stock": 65,
+    "colors": ["Black", "Grey", "Navy"],
+    "sizes": ["S", "M", "L", "XL"]
   },
   {
     "name": "Summer Dress",
@@ -179,8 +266,13 @@
     "price": 69.99,
     "discountPrice": 54.99,
     "description": "Light and breezy dress for summer.",
-    "images": ["https://example.com/images/summer-dress.jpg"],
-    "stock": 55
+    "images": [
+      "https://fabrilife.com/products/61507e0222df7-square.jpg?v=20",
+      "https://fabrilife.com/products/65e086171f36c-square.jpg?v=20"
+    ],
+    "stock": 55,
+    "colors": ["Yellow", "Blue", "Pink"],
+    "sizes": ["S", "M", "L"]
   },
   {
     "name": "Denim Jacket",
@@ -189,8 +281,13 @@
     "price": 89.99,
     "discountPrice": 69.99,
     "description": "Classic denim jacket for all outfits.",
-    "images": ["https://example.com/images/denim-jacket.jpg"],
-    "stock": 35
+    "images": [
+      "https://fabrilife.com/products/654c7c8e3f5f4-square.jpeg?v=20",
+      "https://fabrilife.com/products/640031abaefc9-square.jpg?v=20"
+    ],
+    "stock": 35,
+    "colors": ["Blue", "Black"],
+    "sizes": ["M", "L", "XL"]
   },
   {
     "name": "Sports Watch",
@@ -199,7 +296,12 @@
     "price": 59.99,
     "discountPrice": 44.99,
     "description": "Durable sports watch for active lifestyles.",
-    "images": ["https://example.com/images/watch.jpg"],
-    "stock": 50
+    "images": [
+      "https://fabrilife.com/products/65e1a224b97ef-square.jpg?v=20",
+      "https://fabrilife.com/products/61507e0222df7-square.jpg?v=20"
+    ],
+    "stock": 50,
+    "colors": ["Black", "Silver"],
+    "sizes": ["One Size"]
   }
 ]

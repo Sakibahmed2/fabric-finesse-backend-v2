@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import { buildQuery } from "../../builder/queryBuilder";
 import { Categories } from "../categories/categories.model";
 import { Products } from "./products.model";
@@ -8,6 +9,14 @@ const createProducts = async (payload: TProducts) => {
   const isSlugExists = await Products.findOne({ slug: payload.slug });
   if (isSlugExists) {
     throw new Error("Product with this slug already exists");
+  }
+
+  // Validate category: must not be empty array or missing
+  if (
+    !payload.category ||
+    (Array.isArray(payload.category) && payload.category.length === 0)
+  ) {
+    throw new Error("Category is required and cannot be empty");
   }
 
   // check if category exists
@@ -24,18 +33,61 @@ const createProducts = async (payload: TProducts) => {
 };
 
 const getAllProducts = async (query: any) => {
+  // Support both 'category' (single) and 'categories' (array) in query
+  let sanitizedCategories: string[] | undefined = undefined;
+  if (Array.isArray(query.categories) && query.categories.length > 0) {
+    sanitizedCategories = query.categories;
+  } else if (
+    typeof query.categories === "string" &&
+    query.categories !== "null" &&
+    query.categories !== ""
+  ) {
+    sanitizedCategories = [query.categories];
+  } else if (query.category && query.category !== "null") {
+    sanitizedCategories = [query.category];
+  }
+
+  // Accept both 'colors' and 'sizes' as arrays or single values
+  const sanitizedColors =
+    Array.isArray(query.colors) && query.colors.length > 0
+      ? query.colors
+      : typeof query.colors === "string" &&
+        query.colors !== "null" &&
+        query.colors !== ""
+      ? [query.colors]
+      : undefined;
+  const sanitizedSizes =
+    Array.isArray(query.sizes) && query.sizes.length > 0
+      ? query.sizes
+      : typeof query.sizes === "string" &&
+        query.sizes !== "null" &&
+        query.sizes !== ""
+      ? [query.sizes]
+      : undefined;
+
+  const filters: Record<string, any> = {};
+  if (sanitizedCategories && sanitizedCategories.length > 0) {
+    // Convert all to ObjectId if valid
+    const categoryIds = sanitizedCategories.map((cat) =>
+      mongoose.Types.ObjectId.isValid(cat)
+        ? new mongoose.Types.ObjectId(cat)
+        : cat
+    );
+    filters.category = { $in: categoryIds };
+  }
+  if (sanitizedColors) filters.colors = { $in: sanitizedColors };
+  if (sanitizedSizes) filters.sizes = { $in: sanitizedSizes };
+
   const { filter, page, limit, skip } = buildQuery({
     search: query.search,
-    searchFields: ["name", "description", "slug"],
+    searchFields: ["name", "description", "slug", "sizes", "colors"],
     page: query.page,
     limit: query.limit,
     minPrice: query.minPrice,
     maxPrice: query.maxPrice,
     sortBy: query.sortBy,
     sortOrder: query.sortOrder,
-    filters: {
-      ...(query.category && { category: query.category }),
-    },
+    filters,
   });
 
   const products = await Products.aggregate([

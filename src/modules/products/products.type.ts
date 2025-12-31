@@ -9,6 +9,8 @@ export type TProducts = {
   description: string;
   images: string[];
   stock: number;
+  colors: string[];
+  sizes: string[];
 };
 
 export type TProductQuery = {

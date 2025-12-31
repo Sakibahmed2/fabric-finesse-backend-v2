@@ -27,7 +27,7 @@ const getAllCategories = async (query: any) => {
   const result = await Categories.aggregate([
     { $match: filter },
     {
-      $sort: Object.keys(sort).length ? sort : { createdAt: -1 },
+      $sort: Object.keys(sort ?? {}).length ? sort! : { createdAt: -1 },
     },
     { $skip: (page - 1) * limit },
     { $limit: limit },

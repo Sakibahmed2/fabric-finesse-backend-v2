@@ -31,7 +31,18 @@ const login = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const getAllUsers = catchAsync(async (req: Request, res: Response) => {
+  const result = await UsersService.getAllUsers();
+  sendResponse(res, {
+    statusCode: 200,
+    success: true,
+    message: "Users retrieved successfully",
+    data: result,
+  });
+});
+
 export const UsersController = {
   register,
   login,
+  getAllUsers,
 };

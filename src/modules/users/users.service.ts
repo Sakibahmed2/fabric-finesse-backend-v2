@@ -46,7 +46,13 @@ const loginUser = async (email: string, password: string) => {
   return { token };
 };
 
+const getAllUsers = async () => {
+  const users = await User.find().select("-password");
+  return users;
+};
+
 export const UsersService = {
   registerUser,
   loginUser,
+  getAllUsers,
 };

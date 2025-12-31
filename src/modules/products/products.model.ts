@@ -39,6 +39,18 @@ const productsSchema = new Schema<TProducts>(
       type: Number,
       required: true,
     },
+    colors: [
+      {
+        type: String,
+        required: true,
+      },
+    ],
+    sizes: [
+      {
+        type: String,
+        required: true,
+      },
+    ],
   },
   {
     timestamps: true,

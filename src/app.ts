@@ -4,14 +4,21 @@ import { productsRouter } from "./modules/products/products.routes";
 import sendResponse from "./utils/sendResponse";
 import { categoriesRouter } from "./modules/categories/categories.routes";
 import { orderRouter } from "./modules/orders/order.routes";
+import cors from "cors";
 
 const app = express();
 
 // Middleware to parse JSON bodies
 app.use(express.json());
 
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 // Routes
-app.use("/api/v1/users", userRouter);
+app.use("/api/v1/", userRouter);
 app.use("/api/v1/products", productsRouter);
 app.use("/api/v1/categories", categoriesRouter);
 app.use("/api/v1/orders", orderRouter);
