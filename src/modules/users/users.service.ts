@@ -40,14 +40,16 @@ const loginUser = async (email: string, password: string) => {
   const token = jwt.sign(
     jwtPayload,
     config.jwtSecret as string,
-    { expiresIn: config.expiresIn } as jwt.SignOptions
+    { expiresIn: config.expiresIn } as jwt.SignOptions,
   );
 
   return { token };
 };
 
 const getAllUsers = async () => {
-  const users = await User.find().select("-password");
+  const users = await User.find({
+    role: { $ne: "admin" },
+  }).select("-password");
   return users;
 };
 

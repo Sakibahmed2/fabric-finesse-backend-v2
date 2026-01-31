@@ -65,6 +65,10 @@ const orderSchema = new Schema<TOrder>(
       type: String,
       required: true,
     },
+    phone: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

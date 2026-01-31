@@ -51,7 +51,7 @@ const getAllOrders = async (query: any) => {
   // Use Mongoose's populate for user and items.product_id
   const [orders, total] = await Promise.all([
     Order.find(filter)
-      .populate({ path: "user_id", select: "name email" })
+      .populate({ path: "user_id", select: "name phone" })
       .populate({ path: "items.product_id", select: "name price images" })
       .sort(sort || { createdAt: -1 })
       .skip(skip)
@@ -72,7 +72,7 @@ const getAllOrders = async (query: any) => {
 
 const getSingleOrderByUserId = async (user_id: string) => {
   const orders = await Order.find({ user_id })
-    .populate({ path: "user_id", select: "name email" })
+    .populate({ path: "user_id", select: "name phone" })
     .populate({ path: "items.product_id", select: "name price images" });
   return orders;
 };

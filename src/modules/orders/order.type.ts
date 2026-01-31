@@ -27,4 +27,5 @@ export type TOrder = {
   total: number;
   status: (typeof ORDER_STATUSES)[number];
   address: string;
+  phone: string;
 };
