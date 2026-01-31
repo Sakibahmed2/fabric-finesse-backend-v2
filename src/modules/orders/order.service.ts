@@ -1,5 +1,6 @@
 import { buildQuery, TQueryParams } from "../../builder/queryBuilder";
 import { User } from "../users/users.model";
+import { couponService } from "../coupons/coupon.service";
 import { Order } from "./order.model";
 import { TOrder, TOrderStatus } from "./order.type";
 
@@ -9,6 +10,23 @@ const createOrder = async (orderData: TOrder) => {
   if (!isUserExists) {
     throw new Error("User does not exist");
   }
+
+  // Handle coupon discount if provided
+  let discount = 0;
+  if (orderData.coupon_code) {
+    const couponResult = await couponService.applyCoupon(
+      orderData.coupon_code,
+      orderData.user_id.toString(),
+      orderData.subtotal,
+    );
+    discount = couponResult.discount || 0;
+    orderData.discount = discount;
+  } else {
+    orderData.discount = 0;
+  }
+
+  // Recalculate total: subtotal + delivery_fee - discount
+  orderData.total = orderData.subtotal + orderData.delivery_fee - discount;
 
   const order_id = `ORD-${Date.now()}`;
   orderData.order_id = order_id;

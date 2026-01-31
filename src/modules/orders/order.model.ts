@@ -42,6 +42,15 @@ const orderSchema = new Schema<TOrder>(
       type: Number,
       required: true,
     },
+    discount: {
+      type: Number,
+      default: 0,
+    },
+    coupon_code: {
+      type: String,
+      uppercase: true,
+      trim: true,
+    },
     total: {
       type: Number,
       required: true,
@@ -60,7 +69,7 @@ const orderSchema = new Schema<TOrder>(
   {
     timestamps: true,
     versionKey: false,
-  }
+  },
 );
 
 export const Order = model<TOrder>("Order", orderSchema);

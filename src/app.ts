@@ -5,6 +5,7 @@ import sendResponse from "./utils/sendResponse";
 import { categoriesRouter } from "./modules/categories/categories.routes";
 import { orderRouter } from "./modules/orders/order.routes";
 import cors from "cors";
+import { couponRouter } from "./modules/coupons/coupon.routes";
 
 const app = express();
 
@@ -14,7 +15,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: "*",
-  })
+  }),
 );
 
 // Routes
@@ -22,6 +23,7 @@ app.use("/api/v1/", userRouter);
 app.use("/api/v1/products", productsRouter);
 app.use("/api/v1/categories", categoriesRouter);
 app.use("/api/v1/orders", orderRouter);
+app.use("/api/v1/coupons", couponRouter);
 
 // Not Found Middleware
 app.use((req, res, next) => {
@@ -40,7 +42,7 @@ app.use(
     err: any,
     req: express.Request,
     res: express.Response,
-    next: express.NextFunction
+    next: express.NextFunction,
   ) => {
     console.error("Global Error Handler:", err);
     sendResponse(res, {
@@ -49,7 +51,7 @@ app.use(
       message: err.message || "Internal Server Error",
     });
     next();
-  }
+  },
 );
 
 export default app;

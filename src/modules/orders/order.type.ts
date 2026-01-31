@@ -18,10 +18,12 @@ export type TOrder = {
       color: string;
       size: string;
       quantity: number;
-    }
+    },
   ];
   subtotal: number;
   delivery_fee: number;
+  discount: number;
+  coupon_code?: string;
   total: number;
   status: (typeof ORDER_STATUSES)[number];
   address: string;
