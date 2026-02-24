@@ -1,5 +1,6 @@
 import { buildQuery, TQueryParams } from "../../builder/queryBuilder";
 import { User } from "../users/users.model";
+import { Products } from "../products/products.model";
 import { couponService } from "../coupons/coupon.service";
 import { Order } from "./order.model";
 import { TOrder, TOrderStatus } from "./order.type";
@@ -32,6 +33,17 @@ const createOrder = async (orderData: TOrder) => {
   orderData.order_id = order_id;
 
   const result = await Order.create(orderData);
+
+  // Reduce product stock based on order items
+  const updateStock = orderData.items.map((item) => ({
+    updateOne: {
+      filter: { _id: item.product_id },
+      update: { $inc: { stock: -item.quantity } },
+    },
+  }));
+
+  await Products.bulkWrite(updateStock);
+
   return result;
 };
 
@@ -73,7 +85,8 @@ const getAllOrders = async (query: any) => {
 const getSingleOrderByUserId = async (user_id: string) => {
   const orders = await Order.find({ user_id })
     .populate({ path: "user_id", select: "name phone" })
-    .populate({ path: "items.product_id", select: "name price images" });
+    .populate({ path: "items.product_id", select: "name price images" })
+    .sort({ createdAt: -1 });
   return orders;
 };
 
