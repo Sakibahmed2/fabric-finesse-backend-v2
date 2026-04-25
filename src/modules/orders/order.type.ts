@@ -11,7 +11,7 @@ export type TOrderStatus = (typeof ORDER_STATUSES)[number];
 
 export type TOrder = {
   order_id: string;
-  user_id: Types.ObjectId;
+  user_id?: Types.ObjectId;
   items: [
     {
       product_id: Types.ObjectId;
@@ -28,4 +28,6 @@ export type TOrder = {
   status: (typeof ORDER_STATUSES)[number];
   address: string;
   phone: string;
+  payment_status: "paid" | "unpaid" | "cancelled";
+  transaction_id?: string;
 };

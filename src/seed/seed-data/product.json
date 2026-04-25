@@ -1,30 +1,28 @@
 [
   {
-    "name": "Classic Cotton T-Shirt",
-    "slug": "classic-cotton-tshirt",
+    "name": "Mens Premium TShirt - Sparkles",
+    "slug": "Mens Premium TShirt - Sparkles",
     "category": "T-Shirts",
-    "price": 29.99,
-    "discountPrice": 19.99,
-    "description": "A comfortable and stylish cotton t-shirt, perfect for everyday wear.",
+    "price": 450,
+    "description": "Fabrilife Men's Premium Quality t-shirt offers a smoother, silky feel and a more structured, mid-weight fit than regular t-shirts. The t-shirts are made with the finest quality Combed Compact Cotton, featuring an astonishing ~175 GSM on just 26's cotton, which provides a smooth and compact construction. The compact finish guarantees that the t-shirt's length and width will not change over washes or months of usage.",
     "images": [
-      "https://fabrilife.com/products/65e086171f36c-square.jpg?v=20",
-      "https://fabrilife.com/products/654c7c8e3f5f4-square.jpeg?v=20",
-      "https://fabrilife.com/products/640031abaefc9-square.jpg?v=20"
+      "https://fabrilife.com/products/69af945a53af0-square.jpg?v=20",
+      "https://fabrilife.com/products/69a987a8328ff-square.jpg?v=20"
     ],
     "stock": 120,
     "colors": ["White", "Black", "Blue"],
     "sizes": ["S", "M", "L", "XL"]
   },
   {
-    "name": "Slim Fit Jeans",
-    "slug": "slim-fit-jeans",
+    "name": "Mens Denim Jeans - Indigo",
+    "slug": "mens denim jeans indigo",
     "category": "Jeans",
-    "price": 49.99,
-    "discountPrice": 39.99,
-    "description": "Trendy slim fit jeans for a modern look.",
+    "price": 2100,
+    "discountPrice": 1100,
+    "description": "The stretchable jeans' casual style is emphasized by the genuine garment-washed effects and whiskering. Thanks to the high-stretch fabric and organic cotton construction, these jeans are a hit and are easy to wear all day.",
     "images": [
-      "https://fabrilife.com/products/654c7c8e3f5f4-square.jpeg?v=20",
-      "https://fabrilife.com/products/640031abaefc9-square.jpg?v=20",
+      "https://fabrilife.com/products/651830ea2edad-square.png?v=20",
+      "https://fabrilife.com/products/654a0fba03538-square.jpg?v=20",
       "https://fabrilife.com/products/65e1a224b97ef-square.jpg?v=20"
     ],
     "stock": 80,
@@ -32,16 +30,16 @@
     "sizes": ["28", "30", "32", "34", "36"]
   },
   {
-    "name": "Leather Jacket",
-    "slug": "leather-jacket",
+    "name": "Mens Premium Jacket - Solstice (Black)",
+    "slug": "mens premium jacket solstice black",
     "category": "Jackets",
-    "price": 99.99,
-    "discountPrice": 79.99,
-    "description": "Premium leather jacket for all seasons.",
+    "price": 2500,
+    "discountPrice": 1800,
+    "description": "The Solstice Jacket is a versatile and stylish piece of outerwear designed for both comfort and fashion. Made from high-quality materials, this jacket features a sleek black color that complements any outfit. It is perfect for transitional weather, providing warmth without being too heavy. The jacket includes practical features such as a front zipper closure, multiple pockets for storage, and adjustable cuffs for a customizable fit. Whether you're heading out for a casual day or need an extra layer for cooler evenings, the Solstice Jacket is an excellent choice to keep you looking sharp and feeling comfortable.",
     "images": [
-      "https://fabrilife.com/products/640031abaefc9-square.jpg?v=20",
-      "https://fabrilife.com/products/65e1a224b97ef-square.jpg?v=20",
-      "https://fabrilife.com/products/61507e0222df7-square.jpg?v=20"
+      "https://fabrilife.com/products/67611c88e9124-square.jpg?v=20",
+      "https://fabrilife.com/products/6763ebe634ced-square.jpg?v=20",
+      "https://fabrilife.com/image-gallery/6383785cd18b6-square.jpg?v=20"
     ],
     "stock": 30,
     "colors": ["Black", "Brown"],

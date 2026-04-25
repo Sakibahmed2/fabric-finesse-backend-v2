@@ -11,7 +11,6 @@ const orderSchema = new Schema<TOrder>(
     user_id: {
       type: Schema.Types.ObjectId,
       ref: "User",
-      required: true,
     },
     items: [
       {
@@ -68,6 +67,14 @@ const orderSchema = new Schema<TOrder>(
     phone: {
       type: String,
       required: true,
+    },
+    payment_status: {
+      type: String,
+      enum: ["paid", "unpaid", "cancelled"],
+      default: "unpaid",
+    },
+    transaction_id: {
+      type: String,
     },
   },
   {
