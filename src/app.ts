@@ -6,11 +6,13 @@ import { categoriesRouter } from "./modules/categories/categories.routes";
 import { orderRouter } from "./modules/orders/order.routes";
 import cors from "cors";
 import { couponRouter } from "./modules/coupons/coupon.routes";
+import { paymentRouter } from "./modules/payments/payment.routes";
 
 const app = express();
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
@@ -24,6 +26,7 @@ app.use("/api/v1/products", productsRouter);
 app.use("/api/v1/categories", categoriesRouter);
 app.use("/api/v1/orders", orderRouter);
 app.use("/api/v1/coupons", couponRouter);
+app.use("/api/v1/payments", paymentRouter);
 
 // Not Found Middleware
 app.use((req, res, next) => {

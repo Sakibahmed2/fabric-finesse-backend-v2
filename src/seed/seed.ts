@@ -22,7 +22,7 @@ const seed = async () => {
 
     // Map category names to their ObjectIds
     const categoryMap = Object.fromEntries(
-      insertedCategories.map((cat) => [cat.name, cat._id])
+      insertedCategories.map((cat) => [cat.name, cat._id]),
     );
 
     // Seed products
@@ -32,7 +32,7 @@ const seed = async () => {
       const categoryId = categoryMap[product.category];
       if (!categoryId) {
         throw new Error(
-          `Category not found for product: ${product.name} (category: ${product.category})`
+          `Category not found for product: ${product.name} (category: ${product.category})`,
         );
       }
       return {

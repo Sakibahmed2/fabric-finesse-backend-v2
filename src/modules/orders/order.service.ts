@@ -6,6 +6,10 @@ import { Order } from "./order.model";
 import { TOrder, TOrderStatus } from "./order.type";
 
 const createOrder = async (orderData: TOrder) => {
+  if (!orderData.user_id) {
+    throw new Error("User id is required");
+  }
+
   // Check if user exists
   const isUserExists = await User.findOne({ _id: orderData.user_id });
   if (!isUserExists) {
