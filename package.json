@@ -5,6 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
+    "postinstall": "npm run build",
     "start": "node dist/server.js",
     "dev": "tsnd --respawn src/server.ts",
     "lint": "eslint 'src/**/*.ts'",
