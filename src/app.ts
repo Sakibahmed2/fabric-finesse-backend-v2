@@ -16,7 +16,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: "*",
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://fabric-finesse-frontend.vercel.app/",
+    ],
   }),
 );
 
