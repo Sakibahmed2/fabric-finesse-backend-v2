@@ -7,6 +7,7 @@ import { orderRouter } from "./modules/orders/order.routes";
 import cors from "cors";
 import { couponRouter } from "./modules/coupons/coupon.routes";
 import { paymentRouter } from "./modules/payments/payment.routes";
+import config from "./config/config";
 
 const app = express();
 
@@ -14,20 +15,28 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:5173",
+  "https://fabric-finesse-frontend.vercel.app",
+  config.frontendUrl,
+].filter(Boolean);
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "http://localhost:5173",
-      "https://fabric-finesse-frontend.vercel.app/",
-      "https://fabric-finesse-frontend.vercel.app/login",
-      "https://fabric-finesse-frontend.vercel.app/register",
-    ],
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(new Error("Not allowed by CORS"));
+    },
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   }),
 );
+
+app.options("*", cors());
 
 // Routes
 app.use("/api/v1/", userRouter);
