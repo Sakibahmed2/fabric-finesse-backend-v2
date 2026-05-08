@@ -5,6 +5,8 @@ import { Products } from "../modules/products/products.model";
 import * as fs from "fs";
 import * as path from "path";
 import { loadJson } from "./helpers";
+import { User } from "../modules/users/users.model";
+import bcrypt from "bcrypt";
 
 const seed = async () => {
   try {
@@ -12,8 +14,24 @@ const seed = async () => {
     console.log("Connected to database");
 
     // Clear existing data
-    await Promise.all([Categories.deleteMany({}), Products.deleteMany({})]);
+    await Promise.all([
+      Categories.deleteMany({}),
+      Products.deleteMany({}),
+      User.deleteMany({}),
+    ]);
     console.log("Cleared existing data");
+
+    // Seed users (if needed, not shown here)
+    const usersData = loadJson("users.json");
+
+    // Hash passwords before inserting users
+    for (const user of usersData) {
+      const salt = await bcrypt.genSalt(10);
+      user.password = await bcrypt.hash(user.password, salt);
+    }
+
+    await User.insertMany(usersData);
+    console.log("Seeded users");
 
     // Seed categories
     const categoriesData = loadJson("category.json");

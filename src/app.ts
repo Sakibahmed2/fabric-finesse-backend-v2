@@ -20,6 +20,8 @@ app.use(
       "http://localhost:3000",
       "http://localhost:5173",
       "https://fabric-finesse-frontend.vercel.app/",
+      "https://fabric-finesse-frontend.vercel.app/login",
+      "https://fabric-finesse-frontend.vercel.app/register",
     ],
   }),
 );
