@@ -23,6 +23,9 @@ app.use(
       "https://fabric-finesse-frontend.vercel.app/login",
       "https://fabric-finesse-frontend.vercel.app/register",
     ],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
   }),
 );
 
